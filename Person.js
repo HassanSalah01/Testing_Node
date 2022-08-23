@@ -9,7 +9,7 @@ class Person{
         this.Pnumber = Person.PNumber;
     }
     printing(){
-        console.log()
+        console.log(`ID : ${this.Pnumber}`)
         console.log(`Name : ${this.name}`)
         console.log(`Age : ${this.age}`)
         console.log(`Majour : ${this.majour}`)
