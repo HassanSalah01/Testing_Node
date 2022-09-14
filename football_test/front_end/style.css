@@ -1,0 +1,27 @@
+.main{
+    /* width:50rem; */
+    /* border:2px solid black; */
+    display:flex;
+    justify-content:space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.sub{
+    width:40%;
+    border:2px solid red;
+    display:flex;
+    justify-content:space-between;
+    margin:1rem;
+}
+h1{
+    display:inline-block;
+    text-align:center;
+    width:35%;
+    
+}
+h2{
+    display:inline-block;
+    flex-grow: 1;
+    text-align:center;
+    width:20%;
+}
