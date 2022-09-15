@@ -1,0 +1,176 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+    box-sizing: border-box;
+    background-color:rgb(66, 66, 66);
+}
+
+
+/* =============================================================
+    ================ MY CSS START HERE =======================
+============================================================= */
+
+header {
+    /* border:2px solid black; */
+    height: 6rem;
+    width: 60%;
+    margin:0 auto;
+    text-align: center;
+    color :white;
+    margin-top:1rem;
+}
+header h1{
+    /* border:2px solid black; */
+    font-size:1.5rem;
+    height:50%;
+    font-weight:bold;
+}
+header h3{
+    /* border:2px solid red; */
+    font-size:1rem;
+    height:50%;
+    padding:0.5rem;
+    font-weight:italic;
+}
+
+/* ////////////////////////////////////////////////////////// */
+
+.one{
+    
+    width:90%;
+    margin: 0 auto;
+    border:5px solid black;
+    display:block;
+}
+
+.one input{
+    display:block;
+    width: 80%;
+    margin:0 auto;
+    padding:1rem;
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: rgb(37, 37, 37);
+    /* margin:1rem; */
+    margin-top: 1rem;
+    margin-bottom:1rem;
+    color:grey;
+}
+
+.sec{
+    display: flex;
+    justify-content: space-between;
+    width:80%;
+    margin: 0 auto;
+    
+}
+.sec input{
+    display: inline-block;
+    margin:0 auto;
+    margin-right:2rem;
+    min-width: 5rem;
+    
+}
+
+#total{
+    margin-right: 0px;
+}
+#Sbtn{
+    background-color:#FF1E00;
+    border-radius: 12px;
+    color:white;
+}
+#btn{
+    background-color:rgb(49, 8, 123);
+    color:white;
+    font-size: 1rem;
+}
+
+.two{
+    
+    width:90%;
+    margin: 0 auto;
+    border:5px solid black;
+    display:block;
+}
+
+.two input{
+    display:block;
+    width: 80%;
+    margin:0 auto;
+    padding:1rem;
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: rgb(37, 37, 37);
+    margin-top: 1rem;
+    margin-bottom:1rem;
+    color:grey;
+}
+
+
+.search{
+    display: flex;
+    justify-content: flex-start;
+    width:80%;
+    margin: 0 auto;
+    
+}
+.search input{
+    
+     display: inline-block;
+    margin:0 auto;
+    margin-right:2rem;
+
+}
+#test{
+    margin-right: 0px;
+}
+#col,#test{
+    background-color:rgb(49, 8, 123);
+    color:white;
+    font-size: 1rem;
+}
+
+    
+    
