@@ -1,10 +1,21 @@
+import { createGunzip } from "zlib";
+
 // variable declaration
 let name1: string = "hello";
 let num: number = 5;
 let isTrue: boolean = true;
+let isNull: null = null;
+let isUndefined: undefined;
+let isObject: object = {
+    name: "marco",
+    age: 45,
+};
 console.log(name1);
 console.log(num);
 console.log(isTrue);
+console.log(isNull);
+console.log(isUndefined);
+console.log(isObject);
 
 //Functions VOID
 const printName = (x: string): void => {
@@ -81,3 +92,21 @@ console.log(user6.getName() + " inside The function");
 // A) IUser
 // B) UserInterface
 // we do this to not mistaken them with classes name
+
+// union Types
+
+let pageNumber: string | number;
+pageNumber = 5;
+pageNumber = "10";
+
+// type Allias
+
+type str = string;
+let naming: str = "Marty";
+//here string and str are the same
+//we can also Do let naming :string = "Marty"
+
+// here we are combining Both Allies and types
+type id = string | number;
+let userId: id = "5";
+userId = 10;
