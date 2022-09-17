@@ -1,6 +1,5 @@
-import { createGunzip } from "zlib";
-
 // variable declaration
+
 let name1: string = "hello";
 let num: number = 5;
 let isTrue: boolean = true;
@@ -29,6 +28,24 @@ const printName2 = (x: string): string => {
     return x;
 };
 console.log(printName2("Sara"));
+
+// Function default parameters
+
+const printName3 = (
+    name: string,
+    age: number,
+    phoneNumber?: number
+): string => {
+    return `${name} ${age}${phoneNumber}`;
+};
+
+const printName4 = (...num: number[]): number => {
+    let x = 0;
+    for (let i = 0; i < num.length; i++) {
+        x += num[i];
+    }
+    return x;
+};
 
 //object
 
@@ -110,3 +127,26 @@ let naming: str = "Marty";
 type id = string | number;
 let userId: id = "5";
 userId = 10;
+
+type user = {
+    name: string;
+    age: number;
+};
+// Extend Type user to add new properties
+
+type userss = user & {
+    address: string; // all the user prop +=adress
+};
+
+// Arrays
+
+const arr: number[] = [1, 2, 3, 4, 5];
+const arr1: Array<string> = ["a", "b", "c"];
+
+// different type Array
+
+const arr2: (number | string)[] = [1, 2, 3, "sara"];
+
+// multy dimenssion array
+
+const arr3: (number | string | string[])[] = [1, 2, 3, "sara", ["mark", "poe"]];
