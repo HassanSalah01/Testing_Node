@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="800" style="border:1px solid #000000;"></canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        circle(400, 150, 20, 0,);
+        circle(400, 250, 20, 0,);
+        circle(100, 550, 20, 0,);
+        circle(500, 350, 20, 0,);
+
+        
+        function circle(x,y,z,r){
+            let pi = 2 * Math.PI;
+            ctx.beginPath();
+            ctx.arc(x, y, z, r, pi);
+            ctx.stroke();
+        }
+        
+        </script>
+</body>
+</html>
