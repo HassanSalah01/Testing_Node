@@ -1,15 +1,18 @@
-const s=document.getElementById("ones");
-s.addEventListener("mouseup", (event)=> {
+const s = document.getElementById("ones");
+s.addEventListener("mouseup", (event) => {
     myFunction(event);
-  });
+});
 
-s.addEventListener("mousedown", (event)=> {
+s.addEventListener("mousedown", (event) => {
     myFunction2(event);
-  });
-const myFunction = (e)=>{
+});
+const myFunction = (e) => {
     s.style.backgroundColor = "red";
-}
+};
 
-const myFunction2 = (e)=>{
+const myFunction2 = (e) => {
     s.style.backgroundColor = "green";
-}
+};
+const myFunction3 = (e) => {
+    s.style.backgroundColor = "yellow";
+};
