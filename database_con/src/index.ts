@@ -11,24 +11,24 @@ app.get("/", (req, res) => {
     res.send("Hello WOrld");
 });
 
-db.connect().then((client) => {
-    return client
-        .query("SELECT * from product")
-        .then((res) => {
-            client.release();
-            console.log(res.rows);
-        })
-        .catch((err) => {
-            client.release();
-            console.log(err.stack);
-        });
-});
+// db.connect().then((client) => {
+//     return client
+//         .query("SELECT * from product")
+//         .then((res) => {
+//             client.release();
+//             console.log(res.rows);
+//         })
+//         .catch((err) => {
+//             client.release();
+//             console.log(err.stack);
+//         });
+// });
 const test = async () => {
-    const one = await db.connect();
-    const two = await one.query("SELECT * from product");
-    const three = await two.rows;
-    await one.release();
-    console.log(three);
+    const connection = await db.connect();
+    const sql = "UPDATE product SET name=$1, age=$2, WHERE id=$3 RETURNING *";
+    await connection.query(sql, ["nokia", 200, 1]);
+
+    await connection.release();
 };
 test();
 
