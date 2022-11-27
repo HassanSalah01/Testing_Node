@@ -18,4 +18,22 @@ export class Product {
             throw new Error("No Table Were Found");
         }
     }
+    async create(product: product) {
+        try {
+            const connection = await client.connect();
+            const sql = "INSERT INTO product VALUES ($1,$2) Returning *";
+            const querry = await connection.query(sql, [
+                product.name,
+                product.age,
+            ]);
+            await connection.release();
+            return querry.rows[0];
+        } catch (error) {
+            throw new Error("Coudnt Create Element");
+        }
+    }
+    async update() {
+        const connection = await client.connect();
+        const sql = "UPDATE product ";
+    }
 }
