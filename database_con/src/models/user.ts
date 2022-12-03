@@ -53,4 +53,17 @@ class Product {
             throw new Error("Product Is Not Created");
         }
     }
+    async delete(id:number) {
+        const connection = await client.connect();
+        try {
+            const connection = await client.connect();
+            const sql = "DELETE FROM product WHERE id=$1 RETURNING *";
+            const query = await connection.query(sql,[id]);
+            await connection.release();
+            return query.rows[0];
+        } catch (error) {
+            throw new Error("No Table Were Found");
+        }
+        
+    }
 }
