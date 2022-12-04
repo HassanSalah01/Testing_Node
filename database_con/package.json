@@ -11,7 +11,8 @@
         "lint": "eslint Src/**/*.ts",
         "lintFix": "eslint Src/**/*.ts --fix",
         "jasmine": "jasmine",
-        "testing": "npm run build && npm run jasmine"
+        "testing": "npm run build && npm run jasmine",
+        "test": "ENV=test db-migrate --env test up && npm run testing && db-migrate --env test reset"
     },
     "keywords": [],
     "author": "",
