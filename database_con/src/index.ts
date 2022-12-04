@@ -1,37 +1,30 @@
 import express, { Request, Response, Application } from "express";
-import routes from "./Routes/index";
-import db from "./database";
-const PORT = 3000;
-
+import client from "./database";
+import routes from "./routes/index";
+import dotenv from "dotenv";
 const app = express();
+dotenv.config();
+const { SERVER_PORT } = process.env;
 
-app.use("/", routes);
+// Middleware
+app.use(express.json());
+app.use("/api", routes);
 
-app.get("/", (req, res) => {
-    res.send("Hello WOrld");
+app.get("/", (req: Request, res: Response) => {
+    res.statusCode = 200;
+    res.send("Hello world");
 });
 
-// db.connect().then((client) => {
-//     return client
-//         .query("SELECT * from product")
-//         .then((res) => {
-//             client.release();
-//             console.log(res.rows);
-//         })
-//         .catch((err) => {
-//             client.release();
-//             console.log(err.stack);
-//         });
-// });
-const test = async () => {
-    const connection = await db.connect();
-    const sql = "UPDATE product SET name=$1, age=$2, WHERE id=$3 RETURNING *";
-    await connection.query(sql, ["nokia", 200, 1]);
-
-    await connection.release();
-};
-test();
-
-app.listen(PORT, () => {
-    console.log(`Server is running on Port ${PORT}`);
+app.listen(SERVER_PORT, () => {
+    console.log(`Server is running on Port ${SERVER_PORT}`);
 });
+// const test = async () => {
+//     const connection = await client.connect();
+//     const sql = "select * from products";
+//     const result = await connection.query(sql);
+//     console.log(result.rows);
+//     await connection.release();
+// };
+// test();
+
+export default app;
