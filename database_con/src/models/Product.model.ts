@@ -1,13 +1,13 @@
 import client from "../database";
 
-type product = {
+export type product = {
     id?: number;
     name: string;
     manufacture: string;
     amount: number;
 };
 
-class Product {
+export class ProductModel {
     async index() {
         try {
             const connection = await client.connect();
@@ -20,17 +20,29 @@ class Product {
         }
     }
 
+    async show(id: number) {
+        try {
+            const connection = await client.connect();
+            const sql = "SELECT * FROM products WHERE id=($1)";
+            const result = await connection.query(sql, [id]);
+            connection.release();
+            return result.rows[0];
+        } catch (error) {
+            throw new Error("No Table Were Foundssssss ");
+        }
+    }
     async create(p: product) {
         try {
             const connection = await client.connect();
             const sql =
-                "INSERT INTO products (name ,manufacture,amount) VALUES($1,$2,$3) RETURNING *";
+                "INSERT INTO products (product_name ,product_amount ,product_manufacture) VALUES ($1,$2,$3) RETURNING *";
             const result = await connection.query(sql, [
                 p.name,
-                p.manufacture,
                 p.amount,
+                p.manufacture,
             ]);
             connection.release();
+            console.log("earl2112y");
             return result.rows[0];
         } catch (error) {
             throw new Error("Product Is Not Created");
@@ -40,30 +52,31 @@ class Product {
         try {
             const connection = await client.connect();
             const sql =
-                "UPDATE products set name = $1, munufacture=$2,amount=$3 WHERE id = $4 RETURNING *";
+                "UPDATE products set product_name=$1 ,product_amount=$2 ,product_manufacture=$3 WHERE id=$4 RETURNING *";
+            console.log("welcomne");
             const result = await connection.query(sql, [
                 p.name,
-                p.manufacture,
                 p.amount,
+                p.manufacture,
                 p.id,
             ]);
+            console.log("wlkrewnroen");
             connection.release();
             return result.rows[0];
         } catch (error) {
-            throw new Error("Product Is Not Created");
+            throw new Error(`${error}`);
         }
     }
-    async delete(id:number) {
-        const connection = await client.connect();
+    async delete(id: number) {
         try {
+            console.log("testing delete");
             const connection = await client.connect();
-            const sql = "DELETE FROM product WHERE id=$1 RETURNING *";
-            const query = await connection.query(sql,[id]);
-            await connection.release();
-            return query.rows[0];
+            const sql = "DELETE FROM products WHERE id = ($1) RETURNING *";
+            const result = await connection.query(sql, [id]);
+            connection.release();
+            return result.rows[0];
         } catch (error) {
-            throw new Error("No Table Were Found");
+            throw new Error(`EROOR Deleting Items ${error}`);
         }
-        
     }
 }
