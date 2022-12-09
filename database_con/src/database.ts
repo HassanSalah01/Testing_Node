@@ -4,13 +4,11 @@ let client;
 dotenv.config();
 
 const {
-    SERVER_PORT,
     POSTGRES_USER,
     POSTGRES_DB,
     POSTGRES_TEST_DB,
     POSTGRES_HOST,
     POSTGRES_PASSWORD,
-    POSTGRES_PORT,
     ENV,
 } = process.env;
 
