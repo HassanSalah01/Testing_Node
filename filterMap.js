@@ -13,3 +13,18 @@ let s2 = arr.map((x) => {
 });
 
 console.log(s2);
+
+const arr2 = [
+    { name: "ahmed", age: 15 },
+    { name: "sara", age: 18 },
+    { name: "karim", age: 25 },
+];
+
+
+const arr3 = arr2.filter((x)=>{
+    if(x.age>=18){
+        return x
+    }
+})
+
+console.log(arr3);
